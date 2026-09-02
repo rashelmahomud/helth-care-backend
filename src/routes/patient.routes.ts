@@ -3,19 +3,8 @@ import { Patient } from "../models/patient.model";
 
 const router = Router();
 
-// GET: Fetch all patients
-// router.get('/', async (req: Request, res: Response) => {
-//     try {
-//         const patients = await Patient.find();
-//         res.status(200).json(patients);
-//     } catch (error) {
-//         res.status(500).json({ error: 'Failed to fetch patients' });
-//     }
-// });
-
-
+//GET: Fetch All Patients Data
 router.get('/', async (req: Request, res: Response) => {
-
     try {
         const patients = await Patient.find();
         res.status(200).json(patients);
@@ -23,10 +12,13 @@ router.get('/', async (req: Request, res: Response) => {
         res.status(500).json({ error: "Failed to fetch patients" })
 
     }
-
-
-
 })
+
+
+
+
+
+
 
 
 // POST: Add a new patient record
