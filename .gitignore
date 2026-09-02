@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Environment variables & configuration secrets
+.env
+
+# Build & compilation outputs (if you compile TS to JS, e.g., dist or build folder)
+dist/
+build/
+
+# OS and Editor junk
+.DS_Store
+Thumbs.db
+.vscode/
