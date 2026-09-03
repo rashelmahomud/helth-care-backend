@@ -1,4 +1,4 @@
-import { Schema, Document } from "mongoose";
+import { Schema, Document, model } from "mongoose";
 
 export interface IDoctor extends Document {
     id: number;
@@ -24,7 +24,7 @@ export interface IDoctor extends Document {
     schedule: string[];
 }
 
-export const DoctorSchema = new Schema<IDoctor>({
+const DoctorSchema = new Schema<IDoctor>({
     id: { type: Number, required: true, unique: true },
     name: { type: String, required: true },
     specialty: { type: String, required: true },
@@ -51,3 +51,5 @@ export const DoctorSchema = new Schema<IDoctor>({
     achievements: { type: [String], required: true },
     schedule: { type: [String], required: true }
 });
+
+export const Doctor = model<IDoctor>("Doctor", DoctorSchema,)

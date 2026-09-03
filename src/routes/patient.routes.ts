@@ -1,13 +1,13 @@
-import { Router } from "express";
-import { getAllDoctors } from "../controllers/doctor.controller";
+// import { Router } from "express";
+// import { getAllDoctors } from "../controllers/doctor.controller";
 
-const router = Router();
+// const router = Router();
 
-//GET: Fetch All Patients Data
-router.get('/', getAllDoctors);
+// //GET: Fetch All Patients Data
+// router.get('/doctors', getAllDoctors);
 
 
-export default router;
+// export default router;
 
 
 

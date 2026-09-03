@@ -1,10 +1,10 @@
 import { Request, Response } from "express"
-import { Patient } from "../models/patient.model"
+import { Doctor } from "../models/doctor.model";
 
 
 export const getAllDoctors = async (req: Request, res: Response) => {
     try {
-        const doctors = await Patient.find();
+        const doctors = await Doctor.find({});
         res.status(200).json(doctors)
 
     } catch (error) {
