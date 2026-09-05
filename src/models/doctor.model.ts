@@ -1,7 +1,6 @@
 import { Schema, Document, model } from "mongoose";
 
 export interface IDoctor extends Document {
-    id: number;
     name: string;
     specialty: string;
     experience: string;
@@ -25,7 +24,6 @@ export interface IDoctor extends Document {
 }
 
 const DoctorSchema = new Schema<IDoctor>({
-    id: { type: Number, required: true, unique: true },
     name: { type: String, required: true },
     specialty: { type: String, required: true },
     experience: { type: String, required: true },

@@ -33,6 +33,19 @@ export const getSingleDoctor = async (req: Request, res: Response) => {
 }
 
 
+//new doctor post data
+export const newDoctorPost = async (req: Request, res: Response) => {
+
+    try {
+        const newDoctor = new Doctor(req.body)
+        const doctorSave = await newDoctor.save();
+        res.status(201).json({ message: "post data Successfully", doctor: doctorSave })
+
+    } catch (error) {
+        res.status(500).json({ error: "post data faild here", details: error })
+    }
+}
+
 
 
 // doctor data update patch !
@@ -53,6 +66,24 @@ export const updateDoctorPatch = async (req: Request, res: Response) => {
 
     }
 
+}
+
+
+//doctorDelete data code
+
+export const deleteDoctorData = async (req: Request, res: Response) => {
+
+    try {
+        const { id } = req.params
+        const deleteDoctor = await Doctor.findByIdAndDelete(id)
+        if (!deleteDoctor) {
+            return res.status(404).json({ error: "Doctor Not Found" })
+        }
+
+        res.status(200).json({ message: "Successfully Delete Doctor Data", deleteDoctor })
+    } catch (error) {
+        res.status(500).json({ error: "someting is wrong deleting failed !" })
+    }
 }
 
 
