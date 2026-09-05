@@ -1,7 +1,6 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-// import patientRoutes from './routes/patient.routes';
 import doctorRoutes from './routes/doctor.routes';
 import { connectDB } from './config/db';
 
